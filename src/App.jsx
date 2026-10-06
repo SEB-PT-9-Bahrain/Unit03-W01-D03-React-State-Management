@@ -37,6 +37,14 @@ function App() {
 
   function deleteStudent(clickedStudent){
     console.log(clickedStudent)
+
+    const filteredStudents = students.filter((oneStudent)=>{
+      return oneStudent.studentName !== clickedStudent.studentName
+    })
+
+    console.log(filteredStudents)
+    setStudents(filteredStudents)
+    setDeletedStudents([...deletedStudents,clickedStudent])
   }
 
   // Exercise 1:
