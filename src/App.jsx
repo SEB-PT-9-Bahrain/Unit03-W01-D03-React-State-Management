@@ -35,6 +35,10 @@ function App() {
     setCount(count + 1)
   }
 
+  function deleteStudent(clickedStudent){
+    console.log(clickedStudent)
+  }
+
   // Exercise 1:
   // 1. make a - button
   // 2. when this button is clicked the count should go down
@@ -54,11 +58,16 @@ function App() {
       {students.map((oneStudent)=>
       <div key={oneStudent.studentName}>
         <p>Name: {oneStudent.studentName}</p>
-        <button>Delete Student</button>
+        <button onClick={()=>{deleteStudent(oneStudent)}}>Delete Student</button>
       </div>
       )}
 
       <h2>Deleted Students</h2>
+      {deletedStudents.map((oneStudent)=>
+      <div key={oneStudent.studentName}>
+        <p>Name: {oneStudent.studentName}</p>
+      </div>
+      )}
     </>
   )
 }
