@@ -29,6 +29,7 @@ function App() {
   ]
 
   const [students, setStudents] = useState(allStudents)
+  const [deletedStudents, setDeletedStudents] = useState([])
 
   function handleIncrease(){
     setCount(count + 1)
@@ -51,8 +52,9 @@ function App() {
       <h2>All Students</h2>
 
       {students.map((oneStudent)=>
-      <div>
+      <div key={oneStudent.studentName}>
         <p>Name: {oneStudent.studentName}</p>
+        <button>Delete Student</button>
       </div>
       )}
 
