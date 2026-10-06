@@ -5,6 +5,31 @@ function App() {
   const [count, setCount] = useState(0)
 
 
+  const allStudents = [
+    {
+      studentName: "Mahdi",
+      grade: 101,
+      city:"Manama",
+      age:22
+    },
+    {
+      studentName: "Abdullah",
+      grade: 102,
+      city:"Manama2",
+      age:22
+
+    },
+    {
+      studentName: "Ahmed",
+      grade: 103,
+      city:"Manama3",
+      age:21
+
+    },
+  ]
+
+  const [students, setStudents] = useState(allStudents)
+
   function handleIncrease(){
     setCount(count + 1)
   }
@@ -20,6 +45,18 @@ function App() {
 
       <p>Count: {count}</p>
       <button onClick={handleIncrease}>+</button>
+
+
+
+      <h2>All Students</h2>
+
+      {students.map((oneStudent)=>
+      <div>
+        <p>Name: {oneStudent.studentName}</p>
+      </div>
+      )}
+
+      <h2>Deleted Students</h2>
     </>
   )
 }
